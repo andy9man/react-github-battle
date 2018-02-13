@@ -16,3 +16,11 @@ export const CustomNav = ( {label, to, activeOnlyWhenExact, generalClassName} ) 
 export const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+export const getScore = player => {
+  return player === undefined ? 0 : (player.followers + player.public_repos) * 12;
+}
+
+export const orderedArray = array => {
+  return array.sort( (a, b) => { return a.score < b.score });
+}
