@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getRankingData } from '../store/actions';
-import { orderedArray } from '../components/helper';
+import { orderedArray, numberWithCommas } from '../components/helper';
 
 class RankingsView extends Component {
 
@@ -33,7 +33,7 @@ class RankingsView extends Component {
                                 </div>
 
                                 <div className="small-12 medium-6 columns padding-right-large">
-                                    <h3><span style={ {paddingRight: 10, fontWeight: 800} }>Score: </span>{player.score}</h3>
+                                    <h3><span style={ {paddingRight: 10, fontWeight: 800} }>Score: </span>{numberWithCommas(player.score)}</h3>
                                 </div>
                             </div>
                         ))

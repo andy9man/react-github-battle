@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import { getScore } from '../components/helper';
+import { getScore, numberWithCommas } from '../components/helper';
 
 class ResultsView extends Component {
 
@@ -33,12 +33,12 @@ class ResultsView extends Component {
 
                                     <h1 style={ {color: 'green', fontWeight: 800}}>Winner</h1>
                                     <p className="winner margin-vert-medium">
-                                        <span><strong>{winner.name ? winner.name : winner.login}</strong></span> <span>( Score:&nbsp;&nbsp; {getScore(winner)} )</span>
+                                        <span><strong>{winner.name ? winner.name : winner.login}</strong></span> <span>( Score:&nbsp;&nbsp; {numberWithCommas( getScore(winner) )} )</span>
                                     </p>
 
                                     <h1 style={ {color: 'red', fontWeight: 800}}>Loser</h1>
                                     <p className="loser margin-vert-medium">
-                                        <span><strong>{loser.name ? loser.name : loser.login}</strong></span> <span>( Score:&nbsp;&nbsp; {getScore(loser)} )</span>
+                                        <span><strong>{loser.name ? loser.name : loser.login}</strong></span> <span>( Score:&nbsp;&nbsp; {numberWithCommas( getScore(loser) )} )</span>
                                     </p>
 
                                 </div>
