@@ -22,5 +22,5 @@ export const getScore = player => {
 }
 
 export const orderedArray = array => {
-  return array.sort( (a, b) => { return a.score < b.score });
+  return array.sort( (a, b) => { return b.score - a.score });
 }
